@@ -25,7 +25,6 @@
   </header>
   <main class="container">
     <section class="items">
-      {% for post in posts %}
       <div class="items__item item item--post">
         <div class="item__top">
           <a href="/user-feed.html" class="item__head">
@@ -57,9 +56,11 @@
             </div>
           </div>
           <div class="item__comments">
+            {% for comment in comments %}
             <p class="item__comment">
-              <b>{{ post['commenter_name'] }}:</b> {{ post['comment'] }}
+              <b>{{ comment['commenter_name'] }}:</b> {{ comment['comment'] }}
             </p>
+            {% endfor %}
             <p class="item__comment">
               <b>{{ post['commenter_name'] }}:</b> {{ post['comment'] }}
             </p>
@@ -69,7 +70,6 @@
           </div>
         </div>
       </div>
-      {% endfor %}
     </section>
   </main>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">

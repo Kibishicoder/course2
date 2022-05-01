@@ -17,7 +17,8 @@ def index():
 @app.route("/posts/<int:uid>")
 def post_page(uid):
     comment = get_comments_by_post_id(uid)
-    return render_template('post.html', comment=comment)
+    posts = get_post_by_pk(uid)
+    return render_template('post.html', comment=comment, posts=posts)
 
 
 @app.route("/search/?s=")
@@ -29,10 +30,10 @@ def search_page():
             return render_template('search.html', search_by=search_by, posts=posts)
 
 
-@app.route("/feed/users/<username>")
-def feed_page():
-    user_feed = get_post_by_pk()
-    return render_template('user-feed.html', )
+@app.route("/users/<username>")
+def feed_page(username):
+    user_feed = get_posts_by_user(username)
+    return render_template('user-feed.html', posts=user_feed)
 
 
 # @app.route("/tag/")

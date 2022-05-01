@@ -19,8 +19,7 @@ def get_comments_by_post_id(post_id):
         comments_by_id = []
         for comment in comments:
             if post_id == comment['post_id']:
-                comments_by_id.append(comment['comment'])
-                print(comment['comment'])
+                comments_by_id.append(comment)
     return comments_by_id
 
 
