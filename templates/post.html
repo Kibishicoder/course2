@@ -27,7 +27,7 @@
     <section class="items">
       <div class="items__item item item--post">
         <div class="item__top">
-          <a href="/user-feed.html" class="item__head">
+          <a href="/users/{{ post['poster_name'] }}" class="item__head">
             <div class="item__ava-wrap">
               <img src="{{ post['poster_avatar'] }}" alt="" class="item__ava" width="47">
             </div>
@@ -37,7 +37,7 @@
             <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
-        <a href="" class="item__post-link">
+        <a href="/posts/{{ post['pk'] }}" class="item__post-link">
           <img src="/static/img/post1.jpg" alt="" width="348" class="item__post-img">
         </a>
         <div class="item__descr">
@@ -49,7 +49,7 @@
         </div>
         <div class="item__bottom">
           <div class="item__post-info">
-            <p class="item__comments-counter">{{ post['views_count'] }}</p>
+            <p class="item__comments-counter">“Подробнее”</p>
             <div class="item__counter">
               <img src="/static/img/eye.png" alt="" class="item__counter-icon" width="26">
               <span class="item__counter-text">{{ post['views_count'] }}</span>
@@ -61,11 +61,6 @@
               <b>{{ comment['commenter_name'] }}:</b> {{ comment['comment'] }}
             </p>
             {% endfor %}
-            <p class="item__comment">
-              <b>{{ post['commenter_name'] }}:</b> {{ post['comment'] }}
-            </p>
-            <p class="item__comment">
-              <b>{{ post['commenter_name'] }}:</b> {{ post['comment'] }}
             </p>
           </div>
         </div>

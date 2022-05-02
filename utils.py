@@ -30,16 +30,6 @@ def get_posts_by_user(user_name):
     return [posts for posts in user_data if user_name in posts['poster_name'].lower()]
 
 
-
-
-
-# def get_candidate_by_id(uid):
-# 	candidates = load_candidates()
-# 	for candidate in candidates:
-# 	  if candidate["id"] == uid:
-#       return candidate
-
-
 def search_for_posts(search_by_tag):
     """возвращает список постов по ключевому слову"""
     post_list = get_posts_all()
