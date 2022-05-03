@@ -13,9 +13,9 @@ def index():
 
 @app.route("/posts/<int:uid>")
 def post_page(uid):
-    comment = get_comments_by_post_id(uid)
+    comments = get_comments_by_post_id(uid)
     post = get_post_by_pk(uid)
-    return render_template('post.html', comment=comment, post=post)
+    return render_template('post.html', comments=comments, post=post)
 
 
 @app.route("/search/")
