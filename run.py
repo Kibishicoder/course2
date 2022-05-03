@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, jsonify
-
 from utils import get_posts_all, search_for_posts, get_posts_by_user, get_comments_by_post_id, get_post_by_pk
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 
 @app.route("/")
@@ -46,4 +46,4 @@ def post_page_test(uid):
 
 
 if __name__ == "__main__":
-    app.run(port=8000)
+    app.run()

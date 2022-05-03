@@ -47,7 +47,7 @@
         </div>
         <div class="item__bottom">
           <div class="item__post-info">
-            <p class="item__comments-counter">"Комментариев": {{ comment|length }}</p>
+            <p class="item__comments-counter"></p>
             <div class="item__counter">
               <img src="/static/img/eye.png" alt="" class="item__counter-icon" width="26">
               <span class="item__counter-text">{{ post['views_count'] }}</span>
@@ -56,7 +56,7 @@
           <div class="item__comments">
             {% for comment in comments %}
             <p class="item__comment">
-              <b>{{ comments['commenter_name'] }}:{{ comments['comment'] }}</b>
+              <b>{{ comment['commenter_name'] }}:{{ comment['comment'] }}</b>
             </p>
             {% endfor %}
           </div>

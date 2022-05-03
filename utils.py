@@ -46,13 +46,4 @@ def get_post_by_pk(pk):
     user_data = get_posts_all()
     for poster in user_data:
         if poster['pk'] == pk:
-            return {
-                'poster_name': poster['poster_name'],
-                'content': poster['content'],
-                'poster_avatar': poster['poster_avatar']
-            }
-
-
-# Напишите к каждой функции юнит тесты, расположите тесты в отдельной папке `/tests`.
-#
-# Организуйте тесты в виде классов или функций, на ваше усмотрение.
+            return poster
