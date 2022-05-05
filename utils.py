@@ -34,7 +34,6 @@ def search_for_posts(search_by_tag):
     """возвращает список постов по ключевому слову"""
     post_list = get_posts_all()
     posts_list = []
-
     for post in post_list:
         if search_by_tag.lower() in post['content'].lower():
             posts_list.append(post)
